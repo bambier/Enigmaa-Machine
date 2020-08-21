@@ -1,7 +1,7 @@
 import pickle
 
 
-#If you added operator in today_hash.py first go to @0 and add r5,... to and of r4 like r3, r4, 45, r6, ... , rn then go to @3 and ad cn = rn[alphabets.find(c(n-1))] at last of c4 then add cn = alphabets[rn.find(reflected)] and change c4 to alphabets[rn.find(rn)]] ((next steps are optimal))   then go to @0 and define some varable for your operator after t =	0 and set it to 0 now go to @5 and at last of it addcyour varabels like them then go to @2 and add it at last of it behind other varabels.
+#If you added operator in today_hash.py first go to @0 and add r5,... to and of r4 like r3, r4, 45, r6, ... , rn then go to @3 and ad cn = rn[alphabets.find(c(n-1))] at last of c4 then add cn = alphabets[rn.find(reflected)] and change c4 to alphabets[rn.find(rn)]] ((next steps are optimal))   then go to @0 and define some varable for your operator after t =	0 and set it to 0 now go to @5 and at last of it addcyour varabels like them then go to @1 and add it at last of it behind other varabels.
 
 
 # @0
@@ -67,23 +67,12 @@ def turn(r1, r2, r3, r4, x, y, z, t):
 	return r1, r2, r3, r4, x, y, z, t
 
 
-# @2
-def enigma(word):
+# @1
+while True:
+	text = input("Enter text to hash or unhash>> ")
 	hash_text = ""
-	
-	for character in word:
+	for character in text:
 		x += 1
 		hash_text += machine(character)
 		r1, r2, r3, r4, x, y, z, t = turn(r1, r2, r3, r4, x, y, z, t)
-	
-	return hash_text
-
-
-
-# @1
-if __name__ == "__main__":
-	while True:
-		text = input("Enter text to hash or unhash>> ")
-		coded_text = enigma(text)
-		print("|{0}|".format(coded_text))
-		
+	print("\t|{0}|".format(hash_text))
