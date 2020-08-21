@@ -26,7 +26,7 @@ r3 = "".join(r3)
 
 
 r4 = list(alphabets)
-random.shuffle(r4)
+shuffle(r4)
 r4 = "".join(r4)
 
 
